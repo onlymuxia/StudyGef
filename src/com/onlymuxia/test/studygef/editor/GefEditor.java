@@ -79,6 +79,8 @@ public class GefEditor extends GraphicalEditorWithPalette {
 
 		ScalableRootEditPart rootEditPart = new ScalableRootEditPart();
 		viewer.setRootEditPart(rootEditPart);
+		viewer.setEditPartFactory(new AppEditPartFactory());
+
 		ZoomManager manager = rootEditPart.getZoomManager();
 		getActionRegistry().registerAction(new ZoomInAction(manager));
 		getActionRegistry().registerAction(new ZoomOutAction(manager));
@@ -132,6 +134,10 @@ public class GefEditor extends GraphicalEditorWithPalette {
 
 	}
 
+	/**
+	 * 创建基本图形界面（画布）类
+	 * @return
+	 */
 	public Entreprise CreateEntreprise() {
 		Entreprise psyEntreprise = new Entreprise();
 		psyEntreprise.setName("Psykokwak Entreprise");
@@ -173,6 +179,13 @@ public class GefEditor extends GraphicalEditorWithPalette {
 		employeEric.setLayout(new Rectangle(170, 100, 60, 40));
 		rhService.addChild(employeEric);
 		psyEntreprise.addChild(rhService);
+		
+		
+		HDepartment hd = new HDepartment();
+		hd.setName("Psykokwak Entreprise");
+		hd.setCapital(100000);
+		psyEntreprise.addChild(hd);
+		
 		return psyEntreprise;
 	}
 

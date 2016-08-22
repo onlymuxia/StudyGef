@@ -38,6 +38,17 @@ GEF 学习
 ## 创建一个简单的GEF模型
 ### 建立基本的GEF工程
   包括 : 模型、控制器和视图
+#### Model
+##### Node 模型
+		This class will contain the basic properties that all derived classes will be able to use
+	如文中所意，Node类是做为一个基类存在的，主要属性有  name（节点名） layout（界面大小）children（子节点）parent（父节点）;
+	Enterprise（有属性address，capital）, Service（有属性etage） and Employe（有属性prenom） 做为子类存在
+	
+		Each object in the model needs to be associated with a Figure (draw2d) and an EditPart
+	因此，我们学着也创建自己的类：HDepartment（有属性capital）
+	首先建立HDepartment模型，其次建立HDepartmentFigue算是HDepartment的图形显示，而EditPart则规定发如何来编辑模型，比如双击选中动作，打开属性View
+	
+	
 #### 使用Editor 作为操作 GEF 的界面
 	我们的Editor类从  org.eclipse.ui.part.EditorPart 的子类 org.eclipse.ui.parts.GraphicalEditor派生而来。
 	因为 GraphicalEditor 类 '可以帮助我们创建显示 GEF 图形的 视图 Viewer，'
@@ -59,11 +70,15 @@ IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
 		说明：如果我们把 Graphicalviewer 放在 Editor 中时，我们使用 DefaultEditDomain。'''如果把	Graphicalviewer 放在 View 中或者放在一个独立的 Eclipse 应用中时，
 		我们要用 org.eclipse.gef.EditDomain	作为 Editing domain'''
 
+##### EditParts Factory
+	此工程使用工厂来管理EditParts,model,（主要是生成）
+	从目前代码来看，只有Entreprise有createEditPart方法，我们为自己的模型也增加此方法，等下看这个方法作用
+	为GraphicalViewer添加setEditPartFactory，那么GraphicalViewer上的图案应该就能使用相应EditPartFactory管理了吧
 
-#### Model
-	
 ## 第二阶段
 
+
+PAGE 22
 
 
 

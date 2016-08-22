@@ -10,6 +10,9 @@ public class NodeCreationFactory implements CreationFactory {
 		this.template = t;
 	}
 
+	/**
+	 * 生成模型对象
+	 */
 	@Override
 	public Object getNewObject() {
 		if (template == null)
@@ -23,6 +26,11 @@ public class NodeCreationFactory implements CreationFactory {
 			Employe emp = new Employe();
 			emp.setPrenom("Halle");
 			emp.setName("Berry");
+			return emp;
+		}else if(template == HDepartment.class){
+			HDepartment emp = new HDepartment();
+			emp.setName("Berry");
+			emp.setCapital(11);
 			return emp;
 		}
 		return null;
