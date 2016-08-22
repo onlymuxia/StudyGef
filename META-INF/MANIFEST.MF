@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: StudyGef
-Bundle-SymbolicName: com.onlymuxia.test.StudyGef;singleton:=true
+Bundle-SymbolicName: StudyGef;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.onlymuxia.test.studygef.Activator
 Bundle-Vendor: ONLYMUXIA
