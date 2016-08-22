@@ -46,11 +46,10 @@ GEF 学习
 	此时不可运行 问题出在:GEF插件未启动,GEF插件不只是代码,而是一个OSGI程序，因此，要先到启动器（launcher里面配置，将Plugin里的GEF等插件设置为启动）
 	)
 	可以通过以下方法得到window
-
-
-	'''java
-	IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
-	'''	 
+##### 知识点
+'''java
+IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
+'''	 
 	 
 #####Editor的内容提供者 EditInput
 		Editing domain 管理命令堆栈 command stack、工具条 palette viewer 等。Editing domain 还起通知在Graphicalviewer 中生成的 SWT 事件的作用。
