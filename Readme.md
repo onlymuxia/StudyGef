@@ -19,13 +19,12 @@ GEF 学习
 * 引用 Blockquotes：
 	引用文字前填加 > 
 * 代码快 Code Block
-		每行代码前，使用4个空格或者tab缩进。
-		代码高亮
-		----------
-		在三个反引号后面加上编程语言的名字，另起一行开始写代码，最后一行再加上三个反引号。
-		```Java
-		public static void main(String[]args){} //Java
-		```
+	每行代码前，使用4个空格或者tab缩进。
+	代码高亮
+	在三个反引号后面加上编程语言的名字，另起一行开始写代码，最后一行再加上三个反引号。
+	```
+	public static void main(String[]args){} //Java
+	```
 	
 	
 * 链接 Links：
