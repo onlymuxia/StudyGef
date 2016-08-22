@@ -19,25 +19,26 @@ GEF 学习
 * 引用 Blockquotes：
 	引用文字前填加 > 
 * 代码快 Code Block
-'''
-每行代码前，使用4个空格或者tab缩进。
->	例如：
->    ## Title
-\\\java
-	    if x > y:
-	        print x
-'''
+		每行代码前，使用4个空格或者tab缩进。
+		代码高亮
+		----------
+		在三个反引号后面加上编程语言的名字，另起一行开始写代码，最后一行再加上三个反引号。
+		```Java
+		public static void main(String[]args){} //Java
+		```
+	
+	
 * 链接 Links：
-	把链接文字放在中括号[]中，把对应的URL放到小括号()中。例如[Sina Blog](blog.sina.com.cn)
-	只是显示图片                                                                                                    ![github](http://github.com/unicorn.png "github")
-	点击某个图片进入一个网页                                                                      [image]: http://github.com/github.png "github"  
+		把链接文字放在中括号[]中，把对应的URL放到小括号()中。例如[Sina Blog](blog.sina.com.cn)
+		只是显示图片                                                                                                    ![github](http://github.com/unicorn.png "github")
+		点击某个图片进入一个网页                                                                      [image]: http://github.com/github.png "github"  
 * 语法详细
 [README语法](https://github.com/guodongxiaren/README)
 
 
 ## 创建一个t简单的GEF模型
 ### 建立基本的GEF工程
-                 包括 : 模型、控制器和视图
+  包括 : 模型、控制器和视图
 #### 使用Editor 作为操作 GEF 的界面
 	我们的Editor类从  org.eclipse.ui.part.EditorPart 的子类 org.eclipse.ui.parts.GraphicalEditor派生而来。
 	因为 GraphicalEditor 类 '可以帮助我们创建显示 GEF 图形的 视图 Viewer，'
@@ -46,6 +47,7 @@ GEF 学习
 	此时不可运行 问题出在:GEF插件未启动,GEF插件不只是代码,而是一个OSGI程序，因此，要先到启动器（launcher里面配置，将Plugin里的GEF等插件设置为启动）
 	)
 	可以通过以下方法得到window
+
 
 '''
 '''java
