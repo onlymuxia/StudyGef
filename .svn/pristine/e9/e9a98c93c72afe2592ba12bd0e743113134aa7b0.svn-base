@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: StudyGef
+Bundle-SymbolicName: com.onlymuxia.test.StudyGef;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.onlymuxia.test.studygef.Activator
+Bundle-Vendor: ONLYMUXIA
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.draw2d,
+ org.eclipse.draw2d.geometry,
+ org.eclipse.gef,
+ org.eclipse.gef.editparts,
+ org.eclipse.gef.ui.parts,
+ org.eclipse.ui

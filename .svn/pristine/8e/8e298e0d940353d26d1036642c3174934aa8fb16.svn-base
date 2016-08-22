@@ -1,0 +1,102 @@
+package com.onlymuxia.test.studygef.editor;
+
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.DefaultEditDomain;
+import org.eclipse.gef.GraphicalViewer;
+import org.eclipse.gef.ui.parts.GraphicalEditor;
+
+import com.onlymuxia.test.studygef.figues.AppEditPartFactory;
+import com.onlymuxia.test.studygef.models.*;
+
+public class GefEditor extends GraphicalEditor {
+	public static final String ID = "com.onlymuxia.test.StudyGef.gefEditor";
+
+	public GefEditor() {
+		/*
+		 * Editing domain 管理命令堆栈 command stack、工具条 palette viewer 等。Editing
+		 * domain 还起通知在 Graphicalviewer 中生成的 SWT 事件的作用。因此，一定要建立一个 Editing
+		 * domain。这里，在
+		 * DiagramEditor的构造函数中使用setEditDomain()函数设置了一个org.eclipse.gef.
+		 * DefaultEditDomain作为 Editing domain。我们要说明的是：虽然对 GEF 来讲一个 Editing
+		 * domain 必须是设置成 Graphicalviewer （直白点说就是可画图的），因为我们的 DiagramEditor 是从
+		 * GraphicalEditor 派生的，所以这里的缺省的 Editing domain—DefaultEditDomain
+		 * 其内在是被设置成 Graphicalviewer 的。 说明：如果我们把 Graphicalviewer 放在 Editor
+		 * 中时，我们使用 DefaultEditDomain。如果把 Graphicalviewer 放在 View 中或者放在一个独立的
+		 * Eclipse 应用中时，我们要用 org.eclipse.gef.EditDomain 作为 Editing domain
+		 */
+		// Sets the GEF edit domain to the container.
+		setEditDomain(new DefaultEditDomain(this));
+	}
+
+	@Override
+	public void doSave(IProgressMonitor monitor) {
+		System.out.println(12);
+		// TODO Auto-generated method stub
+
+	}
+
+	// public Entreprise CreateEntreprise(){
+	// Entreprise psyEntreprise = new Entreprise();
+	// psyEntreprise.setName("Psykokwak Entreprise");
+	// psyEntreprise.setAddress("Quelque part sur terre");
+	// psyEntreprise.setCapital(100000);
+	// return psyEntreprise;
+	// }
+
+	protected void configureGraphicalViewer() {
+		super.configureGraphicalViewer();
+		GraphicalViewer viewer = getGraphicalViewer();
+		viewer.setEditPartFactory(new AppEditPartFactory());
+	}
+
+	protected void initializeGraphicalViewer() {
+		GraphicalViewer viewer = getGraphicalViewer();
+		viewer.setContents(CreateEntreprise());
+	}
+
+	public Entreprise CreateEntreprise() {
+		Entreprise psyEntreprise = new Entreprise();
+		psyEntreprise.setName("Psykokwak Entreprise");
+		psyEntreprise.setAddress("Quelque part sur terre");
+		psyEntreprise.setCapital(100000);
+		Service comptaService = new Service();
+		comptaService.setName("Compta");
+		comptaService.setEtage(2);
+		comptaService.setLayout(new Rectangle(30, 50, 250, 150));
+		Employe employeCat = new Employe();
+		employeCat.setName("Debroua");
+		employeCat.setPrenom("Cat");
+		employeCat.setLayout(new Rectangle(25, 40, 60, 40));
+		comptaService.addChild(employeCat);
+		Employe employeJyce = new Employe();
+		employeJyce.setName("Psykokwak");
+		employeJyce.setPrenom("Jyce");
+		employeJyce.setLayout(new Rectangle(100, 60, 60, 40));
+		comptaService.addChild(employeJyce);
+		Employe employeEva = new Employe();
+		employeEva.setName("Longoria");
+		employeEva.setPrenom("Eva");
+		employeEva.setLayout(new Rectangle(180, 90, 60, 40));
+		comptaService.addChild(employeEva);
+		psyEntreprise.addChild(comptaService);
+		Service rhService = new Service();
+		rhService.setName("Ressources Humaine");
+
+		rhService.setEtage(1);
+		rhService.setLayout(new Rectangle(220, 230, 250, 150));
+		Employe employePaul = new Employe();
+		employePaul.setName("Dupond");
+		employePaul.setPrenom("Paul");
+		employePaul.setLayout(new Rectangle(40, 70, 60, 40));
+		rhService.addChild(employePaul);
+		Employe employeEric = new Employe();
+		employeEric.setName("Durand");
+		employeEric.setPrenom("Eric");
+		employeEric.setLayout(new Rectangle(170, 100, 60, 40));
+		rhService.addChild(employeEric);
+		psyEntreprise.addChild(rhService);
+		return psyEntreprise;
+	}
+
+}

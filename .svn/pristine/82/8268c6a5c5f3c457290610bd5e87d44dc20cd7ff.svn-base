@@ -1,0 +1,32 @@
+package com.onlymuxia.test.studygef.figues;
+
+import java.util.List;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
+
+import com.onlymuxia.test.studygef.models.*;
+
+public class ServicePart extends AbstractGraphicalEditPart {
+	@Override
+	protected IFigure createFigure() {
+		IFigure figure = new ServiceFigure();
+		return figure;
+	}
+
+	@Override
+	protected void createEditPolicies() {
+		// TODO Auto-generated method stub
+	}
+
+	protected void refreshVisuals() {
+		ServiceFigure figure = (ServiceFigure) getFigure();
+		Service model = (Service) getModel();
+		figure.setName(model.getName());
+		figure.setEtage(model.getEtage());
+		figure.setLayout(model.getLayout());
+	}
+
+	public List<Node> getModelChildren() {
+		return ((Service) getModel()).getChildrenArray();
+	}
+}
