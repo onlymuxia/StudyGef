@@ -35,7 +35,7 @@ GEF 学习
 [README语法](https://github.com/guodongxiaren/README)
 
 
-## 创建一个t简单的GEF模型
+## 创建一个简单的GEF模型
 ### 建立基本的GEF工程
   包括 : 模型、控制器和视图
 #### 使用Editor 作为操作 GEF 的界面
@@ -46,10 +46,12 @@ GEF 学习
 	此时不可运行 问题出在:GEF插件未启动,GEF插件不只是代码,而是一个OSGI程序，因此，要先到启动器（launcher里面配置，将Plugin里的GEF等插件设置为启动）
 	)
 	可以通过以下方法得到window
+	
+	
 ##### 知识点
-'''java
-IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
-'''	 
+				'''java
+				IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
+				'''	 
 	 
 #####Editor的内容提供者 EditInput
 		Editing domain 管理命令堆栈 command stack、工具条 palette viewer 等。Editing domain 还起通知在Graphicalviewer 中生成的 SWT 事件的作用。
