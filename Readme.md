@@ -3,32 +3,32 @@ GEF 学习
 ## README语法
 ----------------------------------- 
 1. 标题：依次使用几个#表示标题等级，大标题也可以用===，次标题也可以用-------。标题与#之间要留一个空格，
-2. 段落 Paragraph ：两段文字之间至少要留有一个空行，每行文字只要输入两个Tab再输入文字
-3. 字体 Styling Text：
+*. 段落 Paragraph ：两段文字之间至少要留有一个空行，每行文字只要输入两个Tab再输入文字
+*. 字体 Styling Text：
 	斜体： *This text will be italic*  （对应HTML中的标签）
 	粗体：**This text will be bold** （对应HTML中的标签）
-4. 列表 Lists：
+*. 列表 Lists：
 	无序号的列表 Unordered Lists
-	* item 
+	* item
 	- item
 	注意： *和-要与列表内容之间要有空格， *是实心的圆点，-是空心的圆点
-5.有序号的列表 Ordered List:s
+*.有序号的列表 Ordered List:s
 	1. item
 	注意： 列表序号与列表内容之间要有空格
-6.嵌套的列表 Nested Lists:
+*.嵌套的列表 Nested Lists:
 	1. item
 	  1.1 item
 	注意： 嵌套列表要缩进2个空格 
-7.引用 Blockquotes：
+*.引用 Blockquotes：
 	引用文字前填加 > 
-8.代码快 Code Block
+*.代码快 Code Block
 	在每行代码前，使用4个空格或者tab缩进。
 	例如：
     ## Title
 	    if x > y:
 	        print x
 	
-9.链接 Links：
+*.链接 Links：
 把链接文字放在中括号[]中，把对应的URL放到小括号()中。例如[Sina Blog](blog.sina.com.cn)
 只是显示图片                                                                                                    ![github](http://github.com/unicorn.png "github")
 点击某个图片进入一个网页                                                                      [image]: http://github.com/github.png "github"  
